@@ -9,19 +9,9 @@
 
 ---
 
-## 📊 System Dashboard
-
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                                                                         │
-│  CPU: [████████░░░░░░░░░░░░░░░] 0.0%  │  RAM: [██████████░░░░░░░░░░░░] 62.4%
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
 ## 🎯 Overview
+
+<img width="980" height="570" alt="Screenshot 2026-03-03 191759" src="https://github.com/user-attachments/assets/fd9e02be-c4a3-49b2-8046-104ec0440e15" />
 
 **CyberSecMult** is an enterprise-grade cybersecurity toolkit designed for security professionals, penetration testers, and system administrators. This comprehensive utility provides robust tools for network analysis, system security assessment, cryptographic operations, and digital forensics.
 
@@ -41,18 +31,18 @@
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
-║                        MAIN MENU                                  ║
+║                        MAIN MENU                                   ║
 ╠════════════════════════════════════════════════════════════════════╣
 ║                                                                    ║
 ║  1. 🧮 Calculators & Converters                                    ║
-║  2. 🖥️  System Utilities                                            ║
+║  2. 🖥️  System Utilities                                           ║
 ║  3. 🌐 Network & Security Tools                                    ║
 ║  4. 📁 File Operations                                             ║
 ║  5. 🔑 Cryptographic Tools                                         ║
 ║  6. 🔍 Forensics & Analysis                                        ║
-║  7. ❌ Exit                                                         ║
+║  7. ❌ Exit                                                        ║
 ║                                                                    ║
-║  Enter choice [1-7]: _                                            ║
+║  Enter choice [1-7]: _                                             ║
 ║                                                                    ║
 ╚════════════════════════════════════════════════════════════════════╝
 ```
@@ -365,23 +355,20 @@ Special thanks to all contributors, testers, and community members who helped sh
 ╔════════════════════════════════════════════════════════════════════╗
 ║                      CONTACT DETAILS                               ║
 ╠════════════════════════════════════════════════════════════════════╣
-║  Website:      https://www.cybersecmult.dev                        ║
-║  Email:        info@cybersecmult.dev                               ║
-║  GitHub:       https://github.com/yourusername/CyberSecMult        ║
-║  Issues:       https://github.com/yourusername/CyberSecMult/issues ║
+║  Email:        kyros.businesss@gmail.com                           ║
 ╚════════════════════════════════════════════════════════════════════╝
 ```
 
 ---
 
-Made with ❤️ by the CyberSecMult Team
+Made with ❤️ by the Kiriosx1
 Securing the digital world, one utility at a time.
 
 ```
 ████████████████████████████████████████████████████████████████████████████████
 █                                                                              █
-█  CyberSecMult v3.0 - Professional Cybersecurity Utility Suite               █
-█  © 2025 All Rights Reserved                                                 █
+█  CyberSecMult v3.0 - Professional Cybersecurity Utility Suite                █
+█  © 2026 All Rights Reserved                                                  █
 █                                                                              █
 ████████████████████████████████████████████████████████████████████████████████
 ```
