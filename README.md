@@ -132,60 +132,6 @@ cd Release
 ./CyberSecMult.exe
 ```
 
-### First Run
-
-```
-Welcome to CyberSecMult v3.0
-============================
-
-[*] System initialized...
-[+] All modules loaded successfully
-[✓] Ready for operation
-
-Enter choice [1-7]: 3
-```
-
----
-
-## 💡 Usage Examples
-
-### Network Scanning
-```bash
-# Select option 3 from main menu, then:
-# Perform a comprehensive port scan on target
-# Analyze open ports and running services
-# Identify potential vulnerabilities
-```
-
-### File Encryption
-```bash
-# Select option 4 from main menu
-# Choose target file or directory
-# Apply AES-256 encryption
-# Secure key management and backup
-```
-
-### Forensic Analysis
-```bash
-# Select option 6 from main menu
-# Load forensic image or memory dump
-# Analyze system artifacts
-# Generate comprehensive forensic report
-```
-
----
-
-## 🔒 Security Features
-
-✅ **End-to-End Encryption** - All sensitive operations use military-grade encryption  
-✅ **Secure Memory Handling** - Automatic memory wiping after cryptographic operations  
-✅ **Audit Logging** - Comprehensive activity logging for compliance  
-✅ **Access Control** - Role-based permissions and authentication  
-✅ **Code Integrity** - Digital signatures and hash verification  
-✅ **Regular Updates** - Continuous security patches and feature enhancements  
-
----
-
 ## 📋 System Specifications
 
 ```
