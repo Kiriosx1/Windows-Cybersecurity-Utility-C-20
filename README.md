@@ -1,10 +1,10 @@
 # 🛡️ CyberSecMult — Professional Cybersecurity Utility Suite
 
 ```
- ╔═══════════════════════════════════════════════════════════════════════╗
+ ╔════════════════════════════════════════════════════════════════════╗
  ║                     🔐 CYBERSECMULT v4.0 🔐                          ║
  ║            Professional Cybersecurity Utility (C++20/Windows)         ║
- ╚═══════════════════════════════════════════════════════════════════════╝
+ ╚════════════════════════════════════════════════════════════════════╝
 ```
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -16,9 +16,9 @@
 
 ## 🎯 Overview
 
-**CyberSecMult** is an enterprise-grade, native C++20 cybersecurity toolkit for security professionals, penetration testers, red teamers, and system administrators. It runs entirely offline with zero dependencies beyond the Windows SDK — no Python, no .NET, no third-party DLLs.
+**CyberSecMult** is an enterprise-grade, native C++20 cybersecurity toolkit for security professionals, penetration testers, red teamers, and system administrators. It runs entirely offline with zero external dependencies — all cryptography is powered by Windows CNG (Cryptography Next Generation).
 
-v4.0 is a major update introducing **5 new security modules** including native integration of the [Glaux](https://github.com/Kiriosx1/Glaux-) steganography engine, a threat intelligence OSINT suite, a NIST-compliant password auditor, a live privilege escalation scanner, and a network anomaly detector.
+v4.0 is a major update introducing **5 new security modules** including native integration of the [Glaux](https://github.com/Kiriosx1/Glaux-) steganography engine, a threat intelligence OSINT suite, password auditing, privilege escalation scanning, and network defense anomaly detection.
 
 ---
 
@@ -76,7 +76,7 @@ Memory dump capture, process timeline reconstruction, log correlation, disk imag
 
 ### 8️⃣ 🦉 Steganography Engine (Glaux Integration)
 
-Directly integrates the [Glaux](https://github.com/Kiriosx1/Glaux-) steganography project into CyberSecMult as a first-class module. Supports LSB (Least Significant Bit) encoding inside 24-bit BMP images with optional passphrase-based XOR payload encryption.
+Directly integrates the [Glaux](https://github.com/Kiriosx1/Glaux-) steganography project into CyberSecMult as a first-class module. Supports LSB (Least Significant Bit) encoding inside 24-bit BMP images.
 
 | Sub-feature | Description |
 |---|---|
@@ -85,7 +85,7 @@ Directly integrates the [Glaux](https://github.com/Kiriosx1/Glaux-) steganograph
 | Chi-square analysis | Detect whether an image likely contains hidden data |
 | Capacity check | Calculate the maximum embeddable payload size for any BMP |
 
-Passphrase protection: payloads are XOR-encrypted with your passphrase before embedding, so the image is useless without the key. The chi-square statistical analyser detects LSB manipulation in unknown images — useful for counter-steganography investigations.
+Passphrase protection: payloads are XOR-encrypted with your passphrase before embedding, so the image is useless without the key. The chi-square statistical analyser detects LSB manipulation in unmodified images.
 
 ```
   Carrier capacity: 196,605 bytes | Payload: 512 bytes
@@ -106,9 +106,9 @@ A full offline threat intelligence toolkit — no API keys required.
 | Process Hollowing Detector | Cross-check in-memory PE MZ headers against on-disk images |
 | IOC Manager | Load, search, match, and export Indicators of Compromise lists |
 
-The entropy scanner uses Shannon entropy analysis across 4KB chunks of any binary. Regions scoring above 7.2 bits/byte are flagged as `PACKED/ENCRYPTED` — a reliable indicator of packers (UPX, Themida), ransomware, or malicious loaders.
+The entropy scanner uses Shannon entropy analysis across 4KB chunks of any binary. Regions scoring above 7.2 bits/byte are flagged as `PACKED/ENCRYPTED` — a reliable indicator of packers (UPX, ASPack, etc.).
 
-The process hollowing detector reads the in-memory MZ header of every running process and compares it to the on-disk image, flagging mismatches — a classic sign of process hollowing (used by many APT implants).
+The process hollowing detector reads the in-memory MZ header of every running process and compares it to the on-disk image, flagging mismatches — a classic sign of process hollowing (used by malware).
 
 ---
 
@@ -124,7 +124,7 @@ NIST SP 800-63B compliant password evaluation with offline hash cracking.
 | Batch Hash Generator | Generate MD5, SHA-1, SHA-256, and NTLM for any input |
 | Passphrase Generator | Secure Diceware-style passphrases with entropy estimation |
 
-The wordlist attacker uses the native Windows CryptAPI (CNG) for all hashing — it runs entirely without OpenSSL or any external library. Mutation rules include leet substitution (a→@, e→3, etc.) and common numeric suffixes, which significantly extends coverage without needing a rule engine like Hashcat.
+The wordlist attacker uses the native Windows CryptAPI (CNG) for all hashing — it runs entirely without OpenSSL or any external library. Mutation rules include leet substitution (a→@, e→3, o→0) and common suffixes (123, !@#, etc.).
 
 ---
 
@@ -157,7 +157,7 @@ A network situational awareness and defensive toolset.
 | Interface Enumerator | Full IP/MAC/status listing of all network adapters |
 | Poisoning Risk Check | Detects LLMNR and NetBIOS enabled — vulnerability to Responder attacks |
 
-The connection monitor flags established connections to known high-risk ports (4444, 31337, 1337, 9001, etc.) and unusual svchost.exe behaviour in real time. The LLMNR/NetBIOS check identifies one of the most common Active Directory lateral movement pre-conditions — enabled by default on most Windows systems.
+The connection monitor flags established connections to known high-risk ports (4444, 31337, 1337, 9001, etc.) and unusual svchost.exe behaviour in real time. The LLMNR/NetBIOS check identifies on-network vulnerability to Responder-style poisoning attacks.
 
 ---
 
@@ -217,7 +217,7 @@ All other modules (steganography, password audit, entropy scan, etc.) work witho
 ```
 ╔════════════════════════════════════════════════════════════════════╗
 ║  SYSTEM SPECIFICATIONS                                             ║
-╠════════════════════════════════════════════════════════════════════╣
+╠════════════════════════════════════��═══════════════════════════════╣
 ║  Version:               4.0                                         ║
 ║  Language:              C++20                                       ║
 ║  Compiler:              MSVC 2022 / MinGW-w64 13+                  ║
@@ -295,8 +295,8 @@ CyberSecMult v4.0/
 This is the active development plan for upcoming versions. Contributions and issue reports are welcome.
 
 ### v4.1 — Scheduled
-- [ ] **TLS Fingerprinting** — JA3/JA3S client/server fingerprint extraction
-- [ ] **DNS over HTTPS detector** — identify DoH usage on the network
+- [x] **TLS Fingerprinting** — JA3/JA3S client/server fingerprint extraction
+- [x] **DNS over HTTPS detector** — identify DoH usage on the network
 - [ ] **YARA rule scanner** — scan processes/files against YARA signatures
 - [ ] **Registry persistence checker** — enumerate all Run/RunOnce and scheduled task persistence mechanisms
 - [ ] **Active Directory enumeration** (read-only) — domain users, groups, SPNs
@@ -375,7 +375,7 @@ Each module follows the same pattern: a class with static methods + an inline `s
 
 **CyberSecMult** is released under the **MIT License**.
 
-> ⚠️ **IMPORTANT DISCLAIMER:** This tool is designed exclusively for authorised security testing, penetration testing engagements, digital forensics, and educational purposes. Using any component of this tool against systems you do not own or have explicit written permission to test is **illegal** under the Computer Fraud and Abuse Act (CFAA), the UK Computer Misuse Act, and equivalent laws in most jurisdictions. The author assumes zero liability for misuse. Use responsibly.
+> ⚠️ **IMPORTANT DISCLAIMER:** This tool is designed exclusively for authorised security testing, penetration testing engagements, digital forensics, and educational purposes. Using any component of this toolkit for unauthorised access to computer systems is strictly prohibited and illegal. The author assumes no liability for misuse or damage caused by this tool. Always obtain proper legal authorisation before testing any system you do not own.
 
 ---
 
@@ -425,10 +425,10 @@ Made with ❤️ by **Kiriosx1**
 *Securing the digital world, one module at a time.*
 
 ```
-████████████████████████████████████████████████████████████████████████████████
-█                                                                              █
-█  CyberSecMult v4.0 — Professional Cybersecurity Utility Suite               █
-█  © 2026 Kiriosx1. All Rights Reserved. MIT Licensed.                        █
-█                                                                              █
-████████████████████████████████████████████████████████████████████████████████
+█████████████████████████████████████████████████████████████████████
+█                                                                    █
+█  CyberSecMult v4.0 — Professional Cybersecurity Utility Suite      █
+█  © 2026 Kiriosx1. All Rights Reserved. MIT Licensed.               █
+█                                                                    █
+█████████████████████████████████████████████████████████████████████
 ```
