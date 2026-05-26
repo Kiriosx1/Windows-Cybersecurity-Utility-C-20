@@ -424,11 +424,4 @@ Each module follows the same pattern: a class with static methods + an inline `s
 Made with ❤️ by **Kiriosx1**  
 *Securing the digital world, one module at a time.*
 
-```
-█████████████████████████████████████████████████████████████████████
-█                                                                    █
-█  CyberSecMult v4.0 — Professional Cybersecurity Utility Suite      █
-█  © 2026 Kiriosx1. All Rights Reserved. MIT Licensed.               █
-█                                                                    █
-█████████████████████████████████████████████████████████████████████
-```
+
